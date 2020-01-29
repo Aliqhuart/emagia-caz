@@ -18,11 +18,6 @@ abstract class AbstractSkill
     /**
      * @var string
      */
-    protected $affects;
-
-    /**
-     * @var string
-     */
     protected $modifiedSkill;
 
     /**
@@ -39,15 +34,13 @@ abstract class AbstractSkill
      * AbstractSkill constructor.
      *
      * @param string $name
-     * @param string $affects
      * @param string $modifiedSkill
      * @param float  $modifier
      * @param int    $chance
      */
-    public function __construct(string $name, string $affects, string $modifiedSkill, float $modifier, int $chance)
+    public function __construct(string $name, string $modifiedSkill, float $modifier, int $chance)
     {
         $this->name          = $name;
-        $this->affects       = $affects;
         $this->modifiedSkill = $modifiedSkill;
         $this->modifier      = $modifier;
         $this->chance        = $chance;
@@ -69,26 +62,6 @@ abstract class AbstractSkill
     public function setName(string $name): AbstractSkill
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAffects(): string
-    {
-        return $this->affects;
-    }
-
-    /**
-     * @param string $affects
-     *
-     * @return AbstractSkill
-     */
-    public function setAffects(string $affects): AbstractSkill
-    {
-        $this->affects = $affects;
 
         return $this;
     }
