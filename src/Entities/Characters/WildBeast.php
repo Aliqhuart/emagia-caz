@@ -3,6 +3,7 @@
 namespace Emagia\Entities\Characters;
 
 use Emagia\Errors\CharacterCreationException;
+use Throwable;
 
 /**
  * Class WildBeast
@@ -29,7 +30,7 @@ class WildBeast extends AbstractCharacterBuild
             parent::__construct($health, $strength, $defence, $speed, $luck);
 
             $this->setName('Wild Beast');
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             throw new CharacterCreationException('Oops! A problem occurred when creating the character ' . get_class($this));
         }
     }
