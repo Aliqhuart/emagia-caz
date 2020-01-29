@@ -3,6 +3,7 @@
 namespace Emagia\Entities\Characters;
 
 use Emagia\Entities\Skills\AbstractSkill;
+use Emagia\Errors\CharacterCreationException;
 
 /**
  * Class AbstractCharacterBuild
@@ -46,6 +47,30 @@ abstract class AbstractCharacterBuild
      * @var AbstractSkill[]
      */
     protected $skillList;
+
+    /**
+     * AbstractCharacterBuild constructor.
+     *
+     * @param int $health
+     * @param int $strength
+     * @param int $defence
+     * @param int $speed
+     * @param int $luck
+     *
+     * @throws CharacterCreationException
+     */
+    public function __construct(int $health, int $strength, int $defence, int $speed, int $luck)
+    {
+        try {
+            $this->setHealth($health)
+                ->setStrength($strength)
+                ->setDefence($defence)
+                ->setSpeed($speed)
+                ->setLuck($luck);
+        } catch (\Throwable $e) {
+            throw new CharacterCreationException('Oops! A problem occurred when creating the character ' . get_class($this));
+        }
+    }
 
     /**
      * @return string
