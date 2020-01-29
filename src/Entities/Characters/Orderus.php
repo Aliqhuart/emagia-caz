@@ -3,6 +3,7 @@
 namespace Emagia\Entities\Characters;
 
 use Emagia\Errors\CharacterCreationException;
+use Throwable;
 
 /**
  * Class Orderus
@@ -15,7 +16,6 @@ class Orderus extends AbstractCharacterBuild
     /**
      * Orderus constructor.
      *
-     * @param $name
      * @param $health
      * @param $strength
      * @param $defence
@@ -24,13 +24,13 @@ class Orderus extends AbstractCharacterBuild
      *
      * @throws CharacterCreationException
      */
-    public function __construct($name, $health, $strength, $defence, $speed, $luck)
+    public function __construct($health, $strength, $defence, $speed, $luck)
     {
         try {
             parent::__construct($health, $strength, $defence, $speed, $luck);
 
-            $this->setName($name);
-        } catch (\Throwable $e) {
+            $this->setName('Orderus');
+        } catch (Throwable $e) {
             throw new CharacterCreationException('Oops! A problem occurred when creating the character ' . get_class($this));
         }
     }
