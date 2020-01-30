@@ -9,7 +9,7 @@ use Throwable;
  * Class WildBeast
  *
  * @package Emagia\Entities\Characters
- * @author  Corin Zotica <corin.zotica@dcsplus.net>
+ * @author  Corin Zotica <alexandru.corin.zotica@gmail.com>
  */
 class WildBeast extends AbstractCharacterBuild
 {
