@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  * Class RapidStrikeSkillTest
  *
  * @package Emagia\Entities\Skills
- * @author  Corin Zotica <corin.zotica@dcsplus.net>
+ * @author  Corin Zotica <alexandru.corin.zotica@gmail.com>
  */
 class RapidStrikeSkillTest extends TestCase
 {
