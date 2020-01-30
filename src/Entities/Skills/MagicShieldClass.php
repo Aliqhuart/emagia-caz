@@ -2,11 +2,13 @@
 
 namespace Emagia\Entities\Skills;
 
+use Emagia\Helper\SkillTypeEnum;
+
 /**
  * Class MagicShieldClass
  *
  * @package Emagia\Entities\Skills
- * @author  Corin Zotica <corin.zotica@dcsplus.net>
+ * @author  Corin Zotica <alexandru.corin.zotica@gmail.com>
  */
 class MagicShieldClass extends AbstractSkill
 {
@@ -14,8 +16,8 @@ class MagicShieldClass extends AbstractSkill
     {
         parent::__construct(
             'Magic Shield',
-            'damageTaken',
-            50,
+            SkillTypeEnum::DEFENCE,
+            0.5,
             20);
     }
 }
