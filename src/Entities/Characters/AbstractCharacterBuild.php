@@ -4,6 +4,7 @@ namespace Emagia\Entities\Characters;
 
 use Emagia\Entities\Skills\AbstractSkill;
 use Emagia\Errors\CharacterCreationException;
+use Throwable;
 
 /**
  * Class AbstractCharacterBuild
@@ -46,7 +47,7 @@ abstract class AbstractCharacterBuild
     /**
      * @var AbstractSkill[]
      */
-    protected $skillList;
+    protected $skillList = [];
 
     /**
      * AbstractCharacterBuild constructor.
@@ -67,7 +68,7 @@ abstract class AbstractCharacterBuild
                 ->setDefence($defence)
                 ->setSpeed($speed)
                 ->setLuck($luck);
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             throw new CharacterCreationException('Oops! A problem occurred when creating the character ' . get_class($this));
         }
     }
