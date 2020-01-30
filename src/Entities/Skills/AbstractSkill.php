@@ -6,7 +6,7 @@ namespace Emagia\Entities\Skills;
  * Class AbstractSkill
  *
  * @package Emagia\Entities\Skills
- * @author  Corin Zotica <corin.zotica@dcsplus.net>
+ * @author  Corin Zotica <alexandru.corin.zotica@gmail.com>
  */
 abstract class AbstractSkill
 {
